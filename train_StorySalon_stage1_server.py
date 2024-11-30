@@ -329,7 +329,7 @@ def train(
 
 
 if __name__ == "__main__":
-    config = "./config/stage1_config.yml"
+    config = "/workspace/StoryGen/config/stage1_config_server.yml"
     train(**OmegaConf.load(config))
 
 # CUDA_VISIBLE_DEVICES=0,1 accelerate launch train_StorySalon.py
