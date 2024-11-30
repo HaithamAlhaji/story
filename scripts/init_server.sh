@@ -40,3 +40,19 @@ sudo apt update
 sudo apt install unzip
 
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+
+
+sudo apt-get update
+sudo apt-get install gpg-agent
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-6-local/7fa2af80.pub
+sudo cp /var/cuda-repo-ubuntu1804-11-6-local/7fa2af80.pub /etc/apt/trusted.gpg.d/
+sudo apt-get update
+gpgconf --kill gpg-agent
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/cuda-repo-ubuntu1804-11-6-local_11.6.0-510.39.01-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-6-local_11.6.0-510.39.01-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-6-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
