@@ -2,3 +2,5 @@
 !.gitignore
 __pycache__
 StorySalon/
+Miniconda3-*.sh
+stable-diffusion-v1-5
